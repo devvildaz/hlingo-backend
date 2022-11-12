@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: hlingo-deployment
+  labels:
+    app: "hlingo_app"
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: "hlingo_app"
+  template:
+    metadata:
+      labels:
+        app: "hlingo_app"
+    spec:
+      containers:
+      - name: "hlingo_app"
+        image: "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
