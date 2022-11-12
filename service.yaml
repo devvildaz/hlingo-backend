@@ -4,6 +4,6 @@ metadata:
   name: hlingo_service
 spec:
   ports:
-    - port: 8000
-    selector:
-      app: hlingo_app 
+     - port: 8000
+     selector:
+       app: hlingo_app 
