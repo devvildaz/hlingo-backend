@@ -2,6 +2,7 @@
 # For more information see: https://github.com/MishaKav/pytest-coverage-comment/
 name: pytest-coverage-comment
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
