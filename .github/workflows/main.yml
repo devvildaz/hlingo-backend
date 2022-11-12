@@ -70,13 +70,20 @@ jobs:
         curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
         chmod u+x ./kustomize
         
-    - name: Branch resolution (main)
-      if: contains(github.ref, "main")
-      run: export NSPACE=production
-      
-    - name: Branch resolution (testing)
-      if: contains(github.ref, "testing")
-      run: export NSPACE=testing
+    - name: Branch resolution
+      env:
+        MAIN_FLAG: ${{ contains(github.ref, 'main') }}
+        TEST_FLAG: ${{ contains(github.ref, 'testing') }}
+      run: |-
+          if ${MAIN_FLAG} == true; then
+            echo "NSPACE=production" >> $GITHUB_ENV
+            echo "flag set to true"
+          fi
+          if ${TEST_FLAG} == true; then
+            echo "NSPACE=testing" >> $GITHUB_ENV
+            echo "flag set to false"
+          fi
+        
       
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
