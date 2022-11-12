@@ -17,3 +17,34 @@ spec:
       containers:
       - name: hlingoapp
         image: gcr.io/PROJECT_ID/IMAGE:TAG
+        env:
+          - name: APP_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: hlingo-config
+                key: APP_NAME
+          - name: DB_HOST 
+            valueFrom:
+              configMapKeyRef:
+                name: hlingo-config
+                key: DB_HOST 
+          - name: DB_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: hlingo-config
+                key: DB_NAME
+          - name: DB_PORT 
+            valueFrom:
+              configMapKeyRef:
+                name: hlingo-config
+                key: DB_PORT
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: DB_PASSWORD
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: DB_USER
