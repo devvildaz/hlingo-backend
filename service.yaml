@@ -3,7 +3,9 @@ kind: Service
 metadata:
   name: hlingo_service
 spec:
+  selector:
+    app: hlingo_app
   ports:
-     - port: 8000
-     selector:
-       app: hlingo_app 
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
