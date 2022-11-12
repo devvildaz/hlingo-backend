@@ -12,12 +12,3 @@ $ pip install -r requirements.txt
 
 ```
 $ uvicorn main:app --reload
-```
-
-Integrantes
-
-* Aguilar Salazar, Edwin
-* Palomino Guiterrez, Erick
-* Rodriguez Tocas, Miguel
-* Sandoval Salinas, Anthony
-* Vilca Daza, Diego
