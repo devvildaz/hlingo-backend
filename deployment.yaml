@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: hlingoapp
-        image: gcr.io/PROJECT_ID/IMAGE:GITHUB_SHA
+        image: gcr.io/PROJECT_ID/IMAGE:TAG
