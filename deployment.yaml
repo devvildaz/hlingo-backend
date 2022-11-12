@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: hlingo-deployment
   labels:
-    app: hlingo_app
+    app: hlingoapp
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: hlingo_app
+      app: hlingoapp
   template:
     metadata:
       labels:
-        app: hlingo_app
+        app: hlingoapp
     spec:
       containers:
-      - name: hlingo_app
+      - name: hlingoapp
         image: "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
