@@ -35,7 +35,7 @@ jobs:
           pytest-coverage-path: ./pytest-coverage.txt
           junitxml-path: ./pytest.xml
       - name: Check coverage tolerance
-        if: ${{ steps.coverageComment.outputs.coverage < 0.9 || steps.coverageComment.outputs.failures > 0 }}
+        if: ${{ steps.coverageComment.outputs.coverage < "80%" || steps.coverageComment.outputs.failures > 0 }}
         uses: actions/github-script@v3
         with:
           script: |
