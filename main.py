@@ -7,7 +7,6 @@ from starlette_csrf import CSRFMiddleware
 from src.core.db.db import init_database, shutdown_database
 from src.api.v1.auth import auth_router
 from src.api.v1.info import info_router
-from src.api.v1.middleware.oauth_validate import ValidateMiddleware
 from src.core.settings import settings
 from src.api.v1.lessons import lessons_router
 

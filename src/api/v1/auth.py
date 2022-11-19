@@ -5,7 +5,6 @@ from src.api.v1.contracts.auth import ClassicLoginUser, ClassicUserPost,ModifyUs
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.responses import RedirectResponse
-from src.core.oauth import oauth
 from src.utils import token,auth_bearer
 from fastapi import FastAPI, Body, Depends
 from operator import attrgetter

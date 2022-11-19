@@ -22,5 +22,4 @@ class AppUser(Document):
         super(AppUser, self).save(*args, **kwargs)
         
     def val_password(self, out_password: str):
-        #return (self.password==out_password)
         return pbkdf2_sha256.verify(out_password, self.password)
