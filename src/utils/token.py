@@ -4,6 +4,7 @@ from typing import Union, Any
 import jwt
 from src.api.v1.contracts.auth import ClassicLoginUser
 import codecs
+from fastapi import FastAPI, Body, Depends
 
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 30 minutes

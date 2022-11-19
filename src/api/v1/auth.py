@@ -1,15 +1,14 @@
 import email
-from fastapi import APIRouter, Body
+from fastapi import APIRouter
 from src.core.schemas.AppUser import AppUser
 from src.api.v1.contracts.auth import ClassicLoginUser, ClassicUserPost,ModifyUserPost
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.responses import RedirectResponse
 from src.utils import token,auth_bearer
-from fastapi import FastAPI, Body, Depends
-from operator import attrgetter
+from src.api.v1.middleware.auth_middleware import *
+from fastapi import Depends
 import json
-import requests
 
 auth_router = APIRouter(prefix="/v1")
 
@@ -26,12 +25,7 @@ async def register_via_email(user: ClassicUserPost):
 
 @auth_router.post('/login/email')
 async def login_via_email(user:ClassicLoginUser):
-    target = AppUser.objects.get(email=user.email)
-    if target is None: 
-        return JSONResponse({
-            'message': 'user not found'
-        }, status_code=404)
-        
+    target=find_user_by_email(user.email)
     result = target.val_password(user.password)
     if result:
         return JSONResponse({
@@ -75,8 +69,19 @@ async def test(request: Request):
 
 
 @auth_router.get('/validate/token', dependencies=[Depends(auth_bearer.JWTBearer())])
-def get_current_user():
+def validate_token():
     return JSONResponse({
         'message':'valid token'
     })
-    
+
+@auth_router.get('/user/current')
+def get_current_user(token_str:str =Depends(auth_bearer.JWTBearer()) ):
+    payload = token.decodeJWT(token_str) 
+    target=find_user_by_email(payload.get("sub"))
+    return JSONResponse({
+                    'id':str(target.id),
+                    'name':target.name,
+                    'email':target.email,
+                    'score': target.score,
+                },
+                status_code=200)
