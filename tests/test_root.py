@@ -10,26 +10,3 @@ def test_root():
     assert res.status_code  == 200
     assert res.json() == {'api_version': 'v1'}
 
-def test_register():
-    response = client.post(
-        "/v1/register/email",
-        json={"name":"test","email":"test_email@gmail.com","password":"altacontra"},     
-    )
-    assert response.status_code == 201
-    #assert response.json == {
-     #   "name":"test","email":"test_email@gmail.com", "issuer":"localhost"
-    #}
-
-def test_login():
-    response = client.post(
-        "/v1/login/email",
-        json={"email":"test_email@gmail.com","password":"altacontra"},     
-    )
-    assert response.status_code == 200
-
-def test_logout():
-    response = client.post(
-        "/v1/logout"
-    )
-    
-    assert response.status_code == 200

@@ -50,3 +50,5 @@ urllib3==1.26.9
 uvicorn==0.17.6
 watchgod==0.8.2
 websockets==10.3
+PyJWT==1.7.1
+mongomock==4.1.2
