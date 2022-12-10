@@ -1,6 +1,6 @@
 from email.policy import default
 from tokenize import Floatnumber
-from mongoengine import *
+from mongoengine import StringField, DateTimeField, FloatField, Document
 import datetime as dt
 from passlib.hash import pbkdf2_sha256
 
