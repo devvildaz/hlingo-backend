@@ -4,6 +4,7 @@ from typing import Union, Any
 import jwt
 from src.api.v1.contracts.auth import ClassicLoginUser
 import codecs
+from fastapi import FastAPI, Body, Depends
 
 from src.core.settings import settings
 
@@ -38,9 +39,9 @@ def create_refresh_token(subject: ClassicLoginUser, expires_delta: int = None) -
     encoded_jwt = jwt.encode(to_encode, JWT_REFRESH_SECRET_KEY, ALGORITHM)
     return codecs.decode(encoded_jwt)
 
-def decodeJWT(token: str) -> dict:
+def decode_jwt(token: str) -> dict:
     try:
         decoded_token = jwt.decode(token, JWT_SECRET_KEY, algorithms=[ALGORITHM])
         return decoded_token if datetime.utcfromtimestamp(decoded_token["exp"]) >=  datetime.utcnow() else None
-    except:
+    except Exception:
         return {}
