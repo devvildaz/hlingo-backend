@@ -6,12 +6,17 @@ from src.api.v1.contracts.auth import ClassicLoginUser
 import codecs
 from fastapi import FastAPI, Body, Depends
 
+from src.core.settings import settings
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 30 minutes
 REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7 # 7 days
 ALGORITHM = "HS256"
-JWT_SECRET_KEY = os.environ['JWT_SECRET_KEY']   # should be kept secret
-JWT_REFRESH_SECRET_KEY = os.environ['JWT_REFRESH_SECRET_KEY']    # should be kept secret
+JWT_SECRET_KEY = settings.jwt_secret  # should be kept secret
+JWT_REFRESH_SECRET_KEY = settings.jwt_secret_refresh
 
 
 def create_access_token(subject: ClassicLoginUser, expires_delta: int = None) -> str:

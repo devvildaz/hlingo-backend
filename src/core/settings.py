@@ -12,5 +12,7 @@ class Settings():
         self.db_host = os.environ['DB_HOST']
         self.db_user = os.environ['DB_USER']
         self.db_password = os.environ['DB_PASSWORD']
+        self.jwt_secret = os.environ['JWT_SECRET_KEY']
+        self.jwt_secret_refresh = os.environ['JWT_REFRESH_SECRET_KEY']
 
 settings = Settings()

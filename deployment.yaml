@@ -50,3 +50,14 @@ spec:
               secretKeyRef:
                 name: mysecret
                 key: DB_USER
+          - name: JWT_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: JWT_SECRET_KEY
+          - name: JWT_REFRESH_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: JWT_REFRESH_SECRET_KEY
+            
