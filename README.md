@@ -25,7 +25,13 @@ $ uvicorn main:app --host 0.0.0.0 --port 8000
 ### Ejecucion de la aplicacion en Docker
 Descomentar la linea del archivo Dockerfile
 #COPY ./.env ./.env
-y ejecutar 
+y ejecutar
+```
 $ docker build . -t <nombre-imagen>:<tag>
+```
+```
 $ docker run . -t <nombre-imagen>:<tag>
+```
+```
 $ docker run -it -p 8000:8000 --name <nombre-container> <nombre-imagen>:<tag>
+```
