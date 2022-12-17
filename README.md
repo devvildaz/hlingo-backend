@@ -16,15 +16,18 @@ $ pip install -r requirements.txt
 
 ```
 $ uvicorn main:app --reload
-
+```
 ### Ejecucion de la aplicacion FastAPI con uvicorn para entorno de producción
 
 ```
 $ uvicorn main:app --host 0.0.0.0 --port 8000
+```
 
 ### Ejecucion de la aplicacion en Docker
 Descomentar la linea del archivo Dockerfile
+```
 #COPY ./.env ./.env
+```
 y ejecutar
 ```
 $ docker build . -t <nombre-imagen>:<tag>
