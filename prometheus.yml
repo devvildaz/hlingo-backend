@@ -1,0 +1,21 @@
+# my global config
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+  external_labels:
+    monitor: "HoloLingo"
+
+rule_files:
+
+scrape_configs:
+  - job_name: "Hololingo"
+    static_configs:
+      - targets: ["172.16.238.10:8000"]
+
+#  - job_name: "hlingo"
+#    scheme: http
+#    dns_sd_configs:
+#      - names: ["172.16.238.10"]
+#        port: 8000
+#        type: A
+#        refresh_interval: 5s
