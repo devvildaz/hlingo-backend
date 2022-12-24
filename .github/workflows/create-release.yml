@@ -15,10 +15,10 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
       - name: create release
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v0.1.15
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         with:
-          token: ${{ secrets.github_token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{  steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
+          name: ${{ steps.changelog.outputs.tag }}
           #body: ${{ steps.changelog.outputs.clean_changelog }}
