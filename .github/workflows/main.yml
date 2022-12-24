@@ -49,7 +49,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        ref: ${{ github.event.inputs.my_value || steps.latest.outputs.tag_name }}
+        ref: ${{ github.event.inputs.release_version || steps.latest.outputs.tag_name }}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
