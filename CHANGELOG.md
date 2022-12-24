@@ -1,3 +1,12 @@
+# [0.11.0](https://github.com/devvildaz/hlingo-backend/compare/v0.10.0...v0.11.0) (2022-12-24)
+
+
+### Features
+
+* version changed ([688ae7a](https://github.com/devvildaz/hlingo-backend/commit/688ae7ad6e5a6c18249bff27e9aa5ba17ac52350))
+
+
+
 # [0.10.0](https://github.com/devvildaz/hlingo-backend/compare/v0.9.0...v0.10.0) (2022-12-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * tags condition created ([14c0660](https://github.com/devvildaz/hlingo-backend/commit/14c06608cea9cdcdce59fde2971887e79b06c44f))
-
-
-
-# [0.6.0](https://github.com/devvildaz/hlingo-backend/compare/v0.5.0...v0.6.0) (2022-12-24)
-
-
-### Features
-
-* change in list of triggers ([b80f0da](https://github.com/devvildaz/hlingo-backend/commit/b80f0daf5857fed34e70c61ec928639b28ec990a))
 
 
 
