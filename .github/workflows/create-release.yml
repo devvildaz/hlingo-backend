@@ -1,0 +1,24 @@
+name: Create Release
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: get changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3.18.0
+        with:
+          github-token: ${{ secrets.github_token }}
+      - name: create release
+        uses: softprops/action-gh-release@v0.1.15
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{  steps.changelog.outputs.tag }}
+          name: ${{ steps.changelog.outputs.tag }}
+          #body: ${{ steps.changelog.outputs.clean_changelog }}
