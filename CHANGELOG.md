@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/devvildaz/hlingo-backend/compare/v0.7.0...v0.8.0) (2022-12-24)
+
+
+### Features
+
+* workflows changed ([6b2a869](https://github.com/devvildaz/hlingo-backend/commit/6b2a8691fc4458485de098e5b353a22f583a016f))
+
+
+
 # [0.7.0](https://github.com/devvildaz/hlingo-backend/compare/v0.6.0...v0.7.0) (2022-12-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * checkout policies changed ([50f5aba](https://github.com/devvildaz/hlingo-backend/commit/50f5aba3f63046ef4e026fde05a0f4fe7bcb8a5c))
-
-
-
-# [0.3.0](https://github.com/devvildaz/hlingo-backend/compare/v0.2.0...v0.3.0) (2022-12-24)
-
-
-### Features
-
-* delete releases changed ([8806ed5](https://github.com/devvildaz/hlingo-backend/commit/8806ed569bcc2cb8501ee40dad5b64753d7bf7dc))
 
 
 
