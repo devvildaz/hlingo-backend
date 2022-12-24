@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/devvildaz/hlingo-backend/compare/v0.4.0...v0.5.0) (2022-12-24)
+
+
+### Features
+
+* version policies changed ([13b5752](https://github.com/devvildaz/hlingo-backend/commit/13b5752a63d32315dca891bde4cec26cf99d4f56))
+
+
+
 # [0.4.0](https://github.com/devvildaz/hlingo-backend/compare/v0.3.0...v0.4.0) (2022-12-24)
 
 
