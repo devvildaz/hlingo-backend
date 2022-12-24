@@ -27,7 +27,6 @@ env:
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
-    if: ${{ contains(github.ref, 'testing') || startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
 
     steps:
