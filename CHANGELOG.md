@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/devvildaz/hlingo-backend/compare/v0.2.0...v0.3.0) (2022-12-24)
+
+
+### Features
+
+* delete releases changed ([8806ed5](https://github.com/devvildaz/hlingo-backend/commit/8806ed569bcc2cb8501ee40dad5b64753d7bf7dc))
+
+
+
 # [0.2.0](https://github.com/devvildaz/hlingo-backend/compare/v0.1.0...v0.2.0) (2022-12-24)
 
 
