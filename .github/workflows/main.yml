@@ -10,9 +10,10 @@
 name: GKE Kubernetes Deploy
 
 on:
+  release:
+    types: [published]
   push:
     branches:
-      - main
       - testing
 
 env:
