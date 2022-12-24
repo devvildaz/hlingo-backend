@@ -2,9 +2,11 @@
 # For more information see: https://github.com/MishaKav/pytest-coverage-comment/
 name: pytest-coverage-comment
 on:
-  push:
+  workflow_dispatch:
+  pull_request:
     branches:
-      - 'testing'
+      - main
+      - testing
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,7 +29,14 @@ jobs:
           pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov . | tee pytest-coverage.txt
 
       - name: Pytest coverage comment
+        id: coverageComment
         uses: MishaKav/pytest-coverage-comment@main
         with:
           pytest-coverage-path: ./pytest-coverage.txt
           junitxml-path: ./pytest.xml
+      - name: Check coverage tolerance
+        if: ${{ steps.coverageComment.outputs.coverage < '80%' || steps.coverageComment.outputs.failures > 0 }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Coverage test below tolerance OR There are failures')

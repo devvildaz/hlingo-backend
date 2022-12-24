@@ -1,6 +1,6 @@
 from email.policy import default
 from tokenize import Floatnumber
-from mongoengine import *
+from mongoengine import StringField, DateTimeField, FloatField, Document
 import datetime as dt
 from passlib.hash import pbkdf2_sha256
 
@@ -22,5 +22,4 @@ class AppUser(Document):
         super(AppUser, self).save(*args, **kwargs)
         
     def val_password(self, out_password: str):
-        #return (self.password==out_password)
         return pbkdf2_sha256.verify(out_password, self.password)

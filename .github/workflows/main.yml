@@ -7,13 +7,18 @@
 # To get a newer version, you will need to update the SHA.
 # You can also reference a tag or branch, but the action may change without warning.
 
-name: Build and Deploy to GKE
+name: GKE Kubernetes Deploy
 
 on:
+  workflow_run:
+    workflows: [ "Create Release" ]
+    types:
+      - completed
   push:
     branches:
-      - main
       - testing
+  release:
+    types: [deleted]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
@@ -26,11 +31,18 @@ jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
-    environment: production
 
     steps:
+    - id: latest
+      uses: thebritican/fetch-latest-release@v1.0.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    
+    
     - name: Checkout
       uses: actions/checkout@v3
+      with:
+        ref: ${{ steps.latest.outputs.tag_name }}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
@@ -72,13 +84,9 @@ jobs:
         
     - name: Branch resolution
       env:
-        MAIN_FLAG: ${{ contains(github.ref, 'main') }}
         TEST_FLAG: ${{ contains(github.ref, 'testing') }}
       run: |-
-          if ${MAIN_FLAG} == true; then
-            echo "NSPACE=production" >> $GITHUB_ENV
-            echo "flag set to true"
-          fi
+          echo "NSPACE=production" >> $GITHUB_ENV
           if ${TEST_FLAG} == true; then
             echo "NSPACE=testing" >> $GITHUB_ENV
             echo "flag set to false"

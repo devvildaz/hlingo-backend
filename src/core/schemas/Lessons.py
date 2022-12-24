@@ -1,6 +1,6 @@
 from email.policy import default
 from xmlrpc.client import DateTime
-from mongoengine import *
+from mongoengine import StringField, ReferenceField, DecimalField, BooleanField, DateTimeField, Document
 import datetime as dt
 from src.core.schemas.AppUser import AppUser
 
