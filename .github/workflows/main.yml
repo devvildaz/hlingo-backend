@@ -11,7 +11,7 @@ name: GKE Kubernetes Deploy
 
 on:
   release:
-    types: [published]
+    types: [published, deleted]
   push:
     branches:
       - testing
