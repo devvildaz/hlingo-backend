@@ -1,3 +1,12 @@
+# [0.12.0](https://github.com/devvildaz/hlingo-backend/compare/v0.11.0...v0.12.0) (2022-12-24)
+
+
+### Features
+
+* workflow_dispatch ([70881f9](https://github.com/devvildaz/hlingo-backend/commit/70881f993847ef1181f04188fb7740a2ef7ad201))
+
+
+
 # [0.11.0](https://github.com/devvildaz/hlingo-backend/compare/v0.10.0...v0.11.0) (2022-12-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * workflows changed ([6b2a869](https://github.com/devvildaz/hlingo-backend/commit/6b2a8691fc4458485de098e5b353a22f583a016f))
-
-
-
-# [0.7.0](https://github.com/devvildaz/hlingo-backend/compare/v0.6.0...v0.7.0) (2022-12-24)
-
-
-### Features
-
-* tags condition created ([14c0660](https://github.com/devvildaz/hlingo-backend/commit/14c06608cea9cdcdce59fde2971887e79b06c44f))
 
 
 
