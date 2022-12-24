@@ -10,11 +10,13 @@
 name: GKE Kubernetes Deploy
 
 on:
-  release:
-    types: [created, deleted]
   push:
     branches:
       - testing
+    tags:
+      - 'v*'
+  release:
+    types: [deleted]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
