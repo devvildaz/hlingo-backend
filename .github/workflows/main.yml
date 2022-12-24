@@ -12,9 +12,8 @@ name: GKE Kubernetes Deploy
 on:
   push:
     branches:
+      - main
       - testing
-    tags:
-      - 'v*'
   release:
     types: [deleted]
 
@@ -28,8 +27,8 @@ env:
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
+    if: ${{ contains(github.ref, 'testing') || startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
-    environment: production
 
     steps:
     - id: latest
