@@ -10,6 +10,13 @@
 name: GKE Kubernetes Deploy
 
 on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'version to rollback'
+        required: false
+        type: string
+        default: ''
   workflow_run:
     workflows: [ "Create Release" ]
     types:
@@ -42,7 +49,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        ref: ${{ steps.latest.outputs.tag_name }}
+        ref: ${{ github.event.inputs.my_value || steps.latest.outputs.tag_name }}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
