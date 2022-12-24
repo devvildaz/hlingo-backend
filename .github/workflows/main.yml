@@ -30,8 +30,16 @@ jobs:
     environment: production
 
     steps:
+    - id: latest
+      uses: thebritican/fetch-latest-release@v1.0.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    
+    
     - name: Checkout
       uses: actions/checkout@v3
+      with:
+        ref: ${{ steps.latest.outputs.tag_name }}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
