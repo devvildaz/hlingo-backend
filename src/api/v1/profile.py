@@ -28,4 +28,4 @@ async def follow_user(follow: FollowPost):
         followed=follow.followed_id
     )
     new_follow.save()
-    return {"message": "Now you are following!"}
+    return {"message": "Now you have a new following!"}
