@@ -1,3 +1,12 @@
+# [0.10.0](https://github.com/devvildaz/hlingo-backend/compare/v0.9.0...v0.10.0) (2022-12-24)
+
+
+### Features
+
+* add "release created" policy ([799c38d](https://github.com/devvildaz/hlingo-backend/commit/799c38d4a8fb84ff21bdac9e505499e19a275be1))
+
+
+
 # [0.9.0](https://github.com/devvildaz/hlingo-backend/compare/v0.8.0...v0.9.0) (2022-12-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * change in list of triggers ([b80f0da](https://github.com/devvildaz/hlingo-backend/commit/b80f0daf5857fed34e70c61ec928639b28ec990a))
-
-
-
-# [0.5.0](https://github.com/devvildaz/hlingo-backend/compare/v0.4.0...v0.5.0) (2022-12-24)
-
-
-### Features
-
-* version policies changed ([13b5752](https://github.com/devvildaz/hlingo-backend/commit/13b5752a63d32315dca891bde4cec26cf99d4f56))
 
 
 
