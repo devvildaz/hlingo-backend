@@ -11,7 +11,7 @@ name: GKE Kubernetes Deploy
 
 on:
   release:
-    types: [published, deleted]
+    types: [created, deleted]
   push:
     branches:
       - testing
@@ -81,13 +81,9 @@ jobs:
         
     - name: Branch resolution
       env:
-        MAIN_FLAG: ${{ contains(github.ref, 'main') }}
         TEST_FLAG: ${{ contains(github.ref, 'testing') }}
       run: |-
-          if ${MAIN_FLAG} == true; then
-            echo "NSPACE=production" >> $GITHUB_ENV
-            echo "flag set to true"
-          fi
+          echo "NSPACE=production" >> $GITHUB_ENV
           if ${TEST_FLAG} == true; then
             echo "NSPACE=testing" >> $GITHUB_ENV
             echo "flag set to false"
