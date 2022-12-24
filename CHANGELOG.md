@@ -1,3 +1,12 @@
+## [0.12.1](https://github.com/devvildaz/hlingo-backend/compare/v0.12.0...v0.12.1) (2022-12-24)
+
+
+### Bug Fixes
+
+* release version variable ([9152714](https://github.com/devvildaz/hlingo-backend/commit/915271497fe604ab3571985158108e6e59fb0dcc))
+
+
+
 # [0.12.0](https://github.com/devvildaz/hlingo-backend/compare/v0.11.0...v0.12.0) (2022-12-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * condition changed ([c8b2598](https://github.com/devvildaz/hlingo-backend/commit/c8b2598270ee911db9d4bf4e3c4a79be9a3f11b2))
-
-
-
-# [0.8.0](https://github.com/devvildaz/hlingo-backend/compare/v0.7.0...v0.8.0) (2022-12-24)
-
-
-### Features
-
-* workflows changed ([6b2a869](https://github.com/devvildaz/hlingo-backend/commit/6b2a8691fc4458485de098e5b353a22f583a016f))
 
 
 
