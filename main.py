@@ -9,6 +9,7 @@ from src.api.v1.auth import auth_router
 from src.api.v1.info import info_router
 from src.core.settings import settings
 from src.api.v1.lessons import lessons_router
+from src.api.v1.profile import profile_router
 
 app = FastAPI()
 
@@ -19,6 +20,8 @@ app.include_router(auth_router)
 app.include_router(info_router)
 
 app.include_router(lessons_router)
+
+app.include_router(profile_router)
 
 @app.on_event("startup")
 async def init_config():
