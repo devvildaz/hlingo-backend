@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/devvildaz/hlingo-backend/compare/v0.3.0...v0.4.0) (2022-12-24)
+
+
+### Features
+
+* checkout policies changed ([50f5aba](https://github.com/devvildaz/hlingo-backend/commit/50f5aba3f63046ef4e026fde05a0f4fe7bcb8a5c))
+
+
+
 # [0.3.0](https://github.com/devvildaz/hlingo-backend/compare/v0.2.0...v0.3.0) (2022-12-24)
 
 
