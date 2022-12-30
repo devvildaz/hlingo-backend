@@ -85,3 +85,13 @@ def get_current_user(token_str:str =Depends(auth_bearer.JWTBearer()) ):
                     'score': target.score,
                 },
                 status_code=200)
+
+@auth_router.get("/user/search/{term}")
+def search_user(term: str):
+    if term is None:
+        return {"message": "Search term can not be empty"}
+
+    users_found = AppUser.objects(name__icontains=term)
+    users = [{'id': str(user.id), 'name': user.name, 'email': user.email, 'score': user.score} for user in users_found]
+
+    return users

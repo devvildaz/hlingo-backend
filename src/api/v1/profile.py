@@ -8,7 +8,7 @@ import json
 profile_router = APIRouter(prefix="/v1")
 
 
-@profile_router.get("/profile/followed")
+@profile_router.get("/profile/followed_by/{follower_id}")
 def get_followed_users(follower_id: str):
     if follower_id is None:
         return {"message": "Follower id not provided"}
