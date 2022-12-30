@@ -21,10 +21,10 @@ def search_post(term: str):
     return json.loads(posts_found.to_json())
 
 @posts_router.post("/posts/create")
-def post_lessons(post: PostPost):
+def post_post(post: PostPost):
     new_post = Post(
         title=post.title,
         description=post.content
     )
     new_post.save()
-    return {"message": "Lesson saved successfully"}
+    return {"message": "Post saved successfully"}
