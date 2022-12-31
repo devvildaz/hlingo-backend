@@ -1,3 +1,12 @@
+## [0.12.2](https://github.com/devvildaz/hlingo-backend/compare/v0.12.1...v0.12.2) (2022-12-31)
+
+
+### Bug Fixes
+
+* app_name added ([2702037](https://github.com/devvildaz/hlingo-backend/commit/27020378e798a8cf8dfb37506e26596fa22e7906))
+
+
+
 ## [0.12.1](https://github.com/devvildaz/hlingo-backend/compare/v0.12.0...v0.12.1) (2022-12-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * add "release created" policy ([799c38d](https://github.com/devvildaz/hlingo-backend/commit/799c38d4a8fb84ff21bdac9e505499e19a275be1))
-
-
-
-# [0.9.0](https://github.com/devvildaz/hlingo-backend/compare/v0.8.0...v0.9.0) (2022-12-24)
-
-
-### Features
-
-* condition changed ([c8b2598](https://github.com/devvildaz/hlingo-backend/commit/c8b2598270ee911db9d4bf4e3c4a79be9a3f11b2))
 
 
 
