@@ -6,7 +6,8 @@ info_router = APIRouter(prefix="/v1")
 @info_router.get('/')
 async def index():
     return {
-        'api_version': 'v0.10.0'
+        'app_name': settings.app_name,
+        'api_version': 'v0.1'
     }
 
 @info_router.get('/info')
